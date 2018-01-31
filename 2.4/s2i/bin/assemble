@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
+  echo "Restoring build artifacts"
+  # mv /tmp/artifacts/* $HOME/.
+  mv /tmp/artifacts/* ./
+fi
+
 function rake_assets_precompile() {
   [[ "$DISABLE_ASSET_COMPILATION" == "true" ]] && return
   [ ! -f Gemfile ] && return
