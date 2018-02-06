@@ -1,9 +1,5 @@
 #!/bin/sh
 
-DISTRO=`cat /etc/*-release | grep ^ID= | grep -Po '".*?"' | tr -d '"'`
-NAMESPACE=centos
-[[ $DISTRO =~ rhel* ]] && NAMESPACE=rhscl
-
 cat <<EOF
 This is a S2I ruby-2.4 ${DISTRO} base image:
 To use it, install S2I: https://github.com/openshift/source-to-image
