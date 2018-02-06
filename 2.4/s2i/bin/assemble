@@ -48,7 +48,7 @@ if [ -f Gemfile ]; then
     ADDTL_BUNDLE_ARGS+=" --without $BUNDLE_WITHOUT"
   fi
 
-  echo "---> Running 'bundle install ${ADDTL_BUNDLE_ARGS}' ..."
+  echo "---> Running 'bundle install --path ./bundle ${ADDTL_BUNDLE_ARGS}' ..."
   bundle install --path ./bundle ${ADDTL_BUNDLE_ARGS}
 
   echo "---> Cleaning up unused ruby gems ..."
